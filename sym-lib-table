@@ -9,4 +9,6 @@
   (lib (name "marbastlib-promicroish")(type "KiCad")(uri "/Users/rafael/Documents/KiCad/libraries/KiCAD-PCM-2025/symbols/marbastlib-promicroish.kicad_sym")(options "")(descr ""))
   (lib (name "marbastlib-various")(type "KiCad")(uri "/Users/rafael/Documents/KiCad/libraries/KiCAD-PCM-2025/symbols/marbastlib-various.kicad_sym")(options "")(descr ""))
   (lib (name "microChave")(type "KiCad")(uri "/Users/rafael/Downloads/ul_SS-12D00-G-4-E/KiCADv6/2025-11-01_20-29-34.kicad_sym")(options "")(descr ""))
+  (lib (name "keebio")(type "KiCad")(uri "/Users/rafael/Documents/KiCad/libraries/keebio-components/keebio.kicad_sym")(options "")(descr ""))
+  (lib (name "is31fl3731")(type "Legacy")(uri "/Users/rafael/Documents/KiCad/libraries/keyboard_parts-2.pretty-master/is31fl3731.lib")(options "")(descr ""))
 )
