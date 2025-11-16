@@ -9,6 +9,8 @@ The **voidPointer** is a 65% fully wireless keyboard, born from a love for the c
 
 It's a project that celebrates the beauty of exposed through-hole components and the freedom of Bluetooth connectivity with ZMK.
 
+This is a WIP, so continue carefully. I have not finished the case nor the acrylic parts. Also, I have changed the layout to only be ANSI because it creates various errors on KiCad with holes overlaping vias. Changing it back to ANSI/ISO would require you to insert the missing switches and holes, and also routing these pads into the existing rows and columns.
+
 ---
 
 ## ✨ Main Features
