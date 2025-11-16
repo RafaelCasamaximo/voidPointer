@@ -517,7 +517,7 @@
       "plot": "../../../Downloads/testeVoidPointer/",
       "pos_files": "",
       "specctra_dsn": "",
-      "step": "",
+      "step": "discipline-pcb.step",
       "svg": "",
       "vrml": ""
     },
