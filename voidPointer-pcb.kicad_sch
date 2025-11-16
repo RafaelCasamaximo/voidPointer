@@ -1654,7 +1654,7 @@
 			(embedded_fonts no)
 		)
 	)
-	(text "1.1"
+	(text "1.0"
 		(exclude_from_sim no)
 		(at 394.97 280.67 0)
 		(effects
@@ -1676,7 +1676,7 @@
 		)
 		(uuid "755d04c3-3b88-48c3-b455-fbdcdf2dd423")
 	)
-	(text "void* // 65% keyboard with only through hole components"
+	(text "void* // 65% keyboard with only through hole components adapted from Discipline"
 		(exclude_from_sim no)
 		(at 302.26 255.27 0)
 		(effects
