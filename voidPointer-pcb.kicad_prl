@@ -58,7 +58,7 @@
     "ssh_key": ""
   },
   "meta": {
-    "filename": "discipline-pcb.kicad_prl",
+    "filename": "voidPointer-pcb.kicad_prl",
     "version": 5
   },
   "net_inspector_panel": {

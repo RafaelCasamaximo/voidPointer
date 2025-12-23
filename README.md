@@ -1,5 +1,7 @@
 # ⌨️ voidPointer
 
+![voidPointer Keyboard Photo](./docs/main.jpg)
+
 ![Badge - Wireless](https://img.shields.io/badge/Wireless-ZMK-blue?style=for-the-badge)
 ![Badge - KiCad](https://img.shields.io/badge/Hardware-KiCad-green?style=for-the-badge)
 ![Badge - 65%](https://img.shields.io/badge/Layout-65%25-lightgrey?style=for-the-badge)
@@ -9,7 +11,7 @@ The **voidPointer** is a 65% fully wireless keyboard, born from a love for the c
 
 It's a project that celebrates the beauty of exposed through-hole components and the freedom of Bluetooth connectivity with ZMK.
 
-This is a WIP, so continue carefully. I have not finished the case nor the acrylic parts. Also, I have changed the layout to only be ANSI because it creates various errors on KiCad with holes overlaping vias. Changing it back to ANSI/ISO would require you to insert the missing switches and holes, and also routing these pads into the existing rows and columns.
+This is a WIP, so continue carefully. Also, I have changed the layout to only be ANSI because it creates various errors on KiCad with holes overlaping vias. Changing it back to ISO would require you to insert the missing switches and holes, and also routing these pads into the existing rows and columns.
 
 ---
 
@@ -17,7 +19,7 @@ This is a WIP, so continue carefully. I have not finished the case nor the acryl
 
 - **100% Wireless:** Bluetooth Low Energy (BLE) connectivity with ZMK firmware.
 - **Battery Efficiency:** Designed for months of use on a single charge (no LEDs).
-- **nRF52840 Microcontroller:** Uses the `nice!nano` (or a compatible module) as its brain.
+- **nRF52840 Microcontroller:** Uses the `nice!nano v2` (or a compatible module) as its brain.
 - **65% Layout:** A compact and popular layout, based on the Discipline.
 - **THT (Through-Hole) Aesthetics:** Maintains the iconic design with visible `1N4148` diodes.
 - **Hotswap (Optional):** The PCB is designed for soldering, but can be easily converted to hotswap using Mill-Max sockets (`7305` or `0305`).
@@ -33,22 +35,21 @@ The name `voidPointer` is a play on the C language, referencing a generic pointe
 
 This is not an exhaustive list, but it covers the main components.
 
-| Component                 | Quantity | Specification (Example)                                                                              |
-| :------------------------ | :------- | :--------------------------------------------------------------------------------------------------- |
-| **Custom PCB**            | 1        | `voidPointer` (Gerber files in the JLCPCB-supported format in the `/production` directory)           |
-| **Microcontroller**       | 1        | `nice!nano` v2 or `SuperMini nRF52840`                                                               |
-| **Sockets for Micro**     | 2        | Male/Female Pin Headers (2x12) or Mill-Max Sockets                                                   |
-| **Diodes**                | ~68      | `1N4148` (Through-Hole THT)                                                                          |
-| **Power Switch**          | 1        | Slider Switch (ex: SS-12D00)                                                                         |
-| **Battery Connector**     | 1        | `JST-PH` 2-Pin (Horizontal)                                                                          |
-| **Capacitor (Filter)**    | 1        | `100nF` (0.1µF) - THT Ceramic (Ex: 104) or SMD (0805)                                                |
-| **Capacitor (Reservoir)** | 1        | `10µF` - THT Ceramic or SMD (1206)                                                                   |
-| **Battery**               | 1        | LiPo (ex: 1200-2000mAh) with JST-PH connector                                                        |
-| **Switches**              | ~68      | MX-Style (3 or 5 pin)                                                                                |
-| **Hotswap Sockets**       | ~136     | (Optional) Mill-Max `7305` or `0305`                                                                 |
-| **Stabilizers**           | 4        | PCB Mount (2u x3, 6.25u x1)                                                                          |
-| **Case / Footing**        | 1        | Laser cutting files (`.dxf`) in the `/plate`, `/acrylic-case`, and `acrylic-foot-guard` directories. |
-| **Case Hardware**         | ~12      | M2 Screws and Standoffs                                                                              |
+| Component                 | Quantity | Specification (Example)                                                                    |
+| :------------------------ | :------- | :----------------------------------------------------------------------------------------- |
+| **Custom PCB**            | 1        | `voidPointer` (Gerber files in the JLCPCB-supported format in the `/production` directory) |
+| **Microcontroller**       | 1        | `nice!nano` v2 or `SuperMini nRF52840`                                                     |
+| **Sockets for Micro**     | 2        | Male/Female Pin Headers (2x12) or Mill-Max Sockets                                         |
+| **Diodes**                | ~68      | `1N4148` (Through-Hole THT)                                                                |
+| **Power Switch**          | 1        | Slider Switch (ex: SS-12D00)                                                               |
+| **Battery Connector**     | 1        | `JST-PH` 2-Pin (Horizontal)                                                                |
+| **Capacitor (Filter)**    | 1        | `100nF` (0.1µF) - THT Ceramic (Ex: 104) or SMD (0805)                                      |
+| **Capacitor (Reservoir)** | 1        | `10µF` - THT Ceramic or SMD (1206)                                                         |
+| **Battery**               | 1        | LiPo (ex: 1200-2000mAh) with JST-PH connector                                              |
+| **Switches**              | ~68      | MX-Style (3 or 5 pin)                                                                      |
+| **Hotswap Sockets**       | ~136     | (Optional) Mill-Max `7305` or `0305`                                                       |
+| **Stabilizers**           | 4        | PCB Mount (2u x3, 6.25u x1)                                                                |
+| **Case Hardware**         | ~12      | M2 Screws and Standoffs                                                                    |
 
 ---
 
@@ -76,16 +77,15 @@ The firmware files (keymap, overlay, and config) for this project are not in thi
 ## 🏗️ Assembly
 
 1.  **Fabricate the PCB:** Upload the ZIP file from the `/production` directory to a PCB manufacturer (like JLCPCB, PCBWay, etc.).
-2.  **Cut the Case:** Send the `.dxf` files from the `/case` directory to a local or online laser cutting service.
-3.  **PCB Assembly:**
+2.  **PCB Assembly:**
     - **Soldering Order (IMPORTANT):** Solder components from the lowest to the highest profile.
     - 1. Diodes (Be careful with orientation! The black band must match the marking on the PCB).
     - 2. Capacitors, Power Switch, JST Connector.
     - 3. (Optional) Mill-Max Hotswap Sockets (Be patient!).
     - 4. Microcontroller Sockets.
     - 5. Install the Stabilizers.
-4.  **Final Assembly:**
-    - Fit the case plate.
+3.  **Final Assembly:**
+    - Fit the plate.
     - Insert the switches (if hotswap) or solder them (if solder).
     - Assemble the case sandwich with the screws and standoffs.
     - Connect the battery.
